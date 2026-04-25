@@ -20,7 +20,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Run transform_data.py
-        run: python transform_data.py
+        run: python .github/workflows/transform_data.py
 
   load-data-job:
     runs-on: ubuntu-latest
@@ -28,4 +28,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Run load_data.py
-        run: python load_data.py
+        run: python .github/workflows/load_data.py
