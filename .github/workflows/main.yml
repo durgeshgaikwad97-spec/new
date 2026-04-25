@@ -4,7 +4,17 @@ on:
   push:
     branches:
       - main
- transform-data-job:
+
+jobs:
+  extract-data-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Run extract_data.py
+        run: python extract_data.py
+
+  transform-data-job:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
